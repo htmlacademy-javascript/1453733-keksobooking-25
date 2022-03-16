@@ -1,3 +1,1 @@
-import { generateObject } from './data.js';
-
-generateObject();
+import './popup.js';
