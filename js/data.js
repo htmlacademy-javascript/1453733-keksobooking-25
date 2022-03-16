@@ -117,4 +117,8 @@ function generateFeatures() {
   return result;
 }
 
-export { generateObject };
+function arrayObjects() {
+  return Array.from({ length: 1 }, generateObject);
+}
+
+export { arrayObjects };
