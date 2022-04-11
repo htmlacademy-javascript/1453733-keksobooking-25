@@ -32,6 +32,21 @@ const TITLES = ['Best offer of march', 'Hot offer', 'Now or never'];
 const TYPES = ['palace', 'flat', 'house', 'bungalow', 'hotel'];
 const CHECKINS = ['12:00', '13:00', '14:00'];
 const CHECKOUTS = ['12:00', '13:00', '14:00'];
+const TITLE_MIN_LENGTH = 30;
+const TITLE_MAX_LENGTH = 100;
+const MAX_PRICE = 100000;
+const HUNDRED_ROOMS = 100;
+const NOT_GUESTS = 0;
+
+const housePriceTypes = {
+  bungalow: 0,
+  flat: 1000,
+  hotel: 3000,
+  house: 5000,
+  palace: 10000
+};
+
+export { TITLE_MIN_LENGTH, TITLE_MAX_LENGTH, MAX_PRICE, housePriceTypes, HUNDRED_ROOMS, NOT_GUESTS };
 
 const PHOTOS = [
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
