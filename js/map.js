@@ -50,10 +50,9 @@ cardsData.forEach((card) => {
   const markerSimilar = L.marker({
     lat,
     lng,
-  },
-    {
-      icon: mainSimilarIcon
-    });
+  }, {
+    icon: mainSimilarIcon
+  });
   markerSimilar.addTo(map).bindPopup(createCard(card));
 });
 
