@@ -2,6 +2,7 @@ import { MAX_PRICE } from './data.js';
 import { priceField } from './form/validate-ad-form.js';
 
 const sliderElement = document.querySelector('.ad-form__slider');
+
 noUiSlider.create(sliderElement, {
   range: {
     min: 0,
