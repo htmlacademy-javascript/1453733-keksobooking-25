@@ -1,21 +1,11 @@
-function getRandomPositiveInteger(a, b) {
-  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
-  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
-  const result = Math.random() * (upper - lower + 1) + lower;
+const getMapIcon = ({ iconUrl, width, height }) => L.icon({
+  iconUrl,
+  iconSize: [width, height],
+  iconAnchor: [width / 2, height]
+});
 
-  return Math.floor(result);
-}
 
-function getRandomPositiveFloat(a, b, digits = 1) {
-  const lower = Math.min(Math.abs(a), Math.abs(b));
-  const upper = Math.max(Math.abs(a), Math.abs(b));
-  const result = Math.random() * (upper - lower) + lower;
+const isEscapeKey = (evt) => evt.key === 'Escape';
 
-  return +result.toFixed(digits);
-}
 
-function getRandonElementFromArray(list) {
-  return list[Math.floor(Math.random() * list.length)];
-}
-
-export { getRandomPositiveInteger, getRandomPositiveFloat, getRandonElementFromArray };
+export { getMapIcon, isEscapeKey };
