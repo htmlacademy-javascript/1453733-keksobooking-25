@@ -1,4 +1,4 @@
-import { removeDisabledFormGroup } from './form/disabled-form.js';
+import { removeDisabledForm } from './form/disabled-form.js';
 import { createCard } from './offer.js';
 import { mainIcon, similarIcon, getInitialCoords, OPEN_SOURCE_MAP, MAP_ATTRIBUTE, ZOOM_MAP, OFFER_LENGTH } from './data.js';
 import { getMapIcon } from './util.js';
@@ -11,7 +11,6 @@ const map = L.map('map-canvas')
     const { lat, lng } = getInitialCoords();
 
     address.value = `${lat}, ${lng}`;
-    removeDisabledFormGroup();
   })
   .setView(getInitialCoords(), ZOOM_MAP);
 
@@ -45,10 +44,18 @@ const renderCardsOnMap = (cards, target) => {
     .forEach(createMarker);
 };
 
-marker.on('moveend', (evt) => {
-  const { lat, lng } = evt.target.getLatLng();
-  address.value = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
-});
+const mapIsLoad = (cards, target) => {
+  renderCardsOnMap(cards, target);
+  removeDisabledForm();
+
+  marker.on('drag', (evt) => {
+    const { lat, lng } = evt.target.getLatLng();
+    address.value = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+  });
+
+};
+
+map.on('load', mapIsLoad);
 
 marker.addTo(map);
 
@@ -58,4 +65,4 @@ const returnInitialMap = () => {
   map.closePopup();
 };
 
-export { renderCardsOnMap, returnInitialMap };
+export { mapIsLoad, returnInitialMap };

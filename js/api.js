@@ -1,7 +1,7 @@
 import { API_DATA, FORM_URL } from './data.js';
 
-const getCardsData = (onSucces, onError) => {
-  fetch(API_DATA)
+const getCardsData = (onSuccess, onError) => {
+  fetch(`${API_DATA}/data`)
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -9,18 +9,18 @@ const getCardsData = (onSucces, onError) => {
       throw new Error();
     })
     .then((cards) => {
-      onSucces(cards);
+      onSuccess(cards);
     })
     .catch((err) => {
       onError(err.message);
     });
 };
 
-const sendData = (onSucces, onFail, body) => {
-  fetch(FORM_URL, { method: 'POST', body })
+const sendData = (onSuccess, onFail, body) => {
+  fetch(`${FORM_URL}/data`, { method: 'POST', body })
     .then((response) => {
       if (response.ok) {
-        return onSucces();
+        return onSuccess();
       } else {
         throw new Error();
       }
