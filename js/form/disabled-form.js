@@ -33,6 +33,4 @@ const resetFormGroup = () => {
   adFormHeaderPreview.src = HEADER_PREVIEW_IMG;
 };
 
-
-
 export { removeDisabledForm, resetFormGroup, onDisabledForm, formFilter };
