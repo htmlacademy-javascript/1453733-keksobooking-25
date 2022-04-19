@@ -26,7 +26,7 @@ const getCapacityOffer = (rooms, guests) => {
     return `${rooms} комнаты для ${guests} гостей.`;
   }
 
-  return false;
+  return '';
 };
 
 const getTimeBooking = (checkin, checkout) => {
@@ -34,7 +34,7 @@ const getTimeBooking = (checkin, checkout) => {
     return `Заезд после ${checkin}, выезд до ${checkout}.`;
   }
 
-  return false;
+  return '';
 };
 
 const createPhotosList = (container, photos) => {

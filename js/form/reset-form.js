@@ -11,20 +11,20 @@ function showSuccessMessage() {
   const content = success.querySelector('.success').cloneNode(true);
   document.body.appendChild(content);
 
-  document.addEventListener('click', hideSuccessMessage);
+  document.addEventListener('click', onHideSuccessMessage);
   document.addEventListener('keydown', onHideSuccessMessageKeyDown);
 }
 
 function onHideSuccessMessageKeyDown(evt) {
   if (isEscapeKey(evt)) {
-    hideSuccessMessage();
-    document.removeEventListener('keydown', onHideSuccessMessageKeyDown);
+    onHideSuccessMessage();
   }
 }
 
-function hideSuccessMessage() {
+function onHideSuccessMessage() {
   document.querySelector('.success').remove();
-  document.removeEventListener('click', hideSuccessMessage);
+  document.removeEventListener('click', onHideSuccessMessage);
+  document.removeEventListener('keydown', onHideSuccessMessageKeyDown);
 }
 
 function resetForm() {
@@ -37,6 +37,5 @@ function resetForm() {
 }
 
 resetBtn.addEventListener('click', resetForm);
-
 
 export { resetForm };
