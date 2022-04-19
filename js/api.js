@@ -27,4 +27,5 @@ const sendData = (onSuccess, onFail, body) => {
     }).catch(() => onFail());
 };
 
+
 export { getCardsData, sendData };
