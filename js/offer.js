@@ -87,4 +87,5 @@ const createCard = ({ author, offer }) => {
   return element;
 };
 
+
 export { createCard };
