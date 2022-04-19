@@ -32,7 +32,7 @@ const onChangePriceMinValue = (evt) => {
 };
 
 const validatePrice = (value) => {
-  const minValue = Number(priceField.placeholder);
+  const minValue = Number(priceField.value);
 
   return value >= minValue;
 };
@@ -41,9 +41,9 @@ const getErrorMessagePrice = () => `Не меньше ${minPriceValue} руб.`;
 
 const validateMinLength = (value) => value.length > TITLE_MIN_LENGTH;
 
-const getRoomsForGuests = (rooms) => {
+const getRoomsForGuests = () => {
   const guests = Number(capacitySelect.value);
-  rooms = Number(rooms);
+  const rooms = Number(roomsSelect.value);
 
   if (rooms === HUNDRED_ROOMS) {
     errorCapacityMessage = 'Не для гостей';
@@ -76,6 +76,7 @@ timeField.addEventListener('change', (evt) => {
 });
 
 pristine.addValidator(roomsSelect, getRoomsForGuests, getCapacityErrorMessage);
+pristine.addValidator(capacitySelect, getRoomsForGuests, getCapacityErrorMessage);
 pristine.addValidator(priceField, validatePrice, getErrorMessagePrice);
 pristine.addValidator(titleField, validateMinLength, getTitleLengthMessage);
 
@@ -89,7 +90,7 @@ const switchOnSubmitBtn = () => {
   submitBtn.disabled = false;
 };
 
-const setSubmitForm = (onSucces, onFail) => {
+const setSubmitForm = (onSuccess, onFail) => {
   adForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
     const isValid = pristine.validate();
@@ -97,7 +98,7 @@ const setSubmitForm = (onSucces, onFail) => {
     if (isValid) {
       const formData = new FormData(evt.target);
       disableSubmitBtn();
-      sendData(onSucces, onFail, formData);
+      sendData(onSuccess, onFail, formData);
     }
   });
 };

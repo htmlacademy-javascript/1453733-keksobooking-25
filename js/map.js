@@ -6,11 +6,15 @@ import { compareCards, getFormData, isFilteredCard } from './form/filter-form.js
 
 const address = document.querySelector('#address');
 
+const initFormAddress = () => {
+  const { lat, lng } = getInitialCoords();
+
+  address.value = `${lat}, ${lng}`;
+};
+
 const map = L.map('map-canvas')
   .on('load', () => {
-    const { lat, lng } = getInitialCoords();
-
-    address.value = `${lat}, ${lng}`;
+    initFormAddress();
   })
   .setView(getInitialCoords(), ZOOM_MAP);
 
@@ -65,4 +69,4 @@ const returnInitialMap = () => {
   map.closePopup();
 };
 
-export { mapIsLoad, returnInitialMap };
+export { mapIsLoad, returnInitialMap, initFormAddress };
