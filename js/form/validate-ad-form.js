@@ -104,10 +104,10 @@ const setSubmitForm = (onSucces, onFail) => {
 
 const initFormAddress = () => {
   document.querySelector('input#address').value = DEFAULT_ADDRESS;
-}
+};
 
 const initFormPrice = () => {
   document.querySelector('input#price').value = DEFAULT_PRICE;
-}
+};
 
 export { priceField, pristine, switchOnSubmitBtn, setSubmitForm, initFormAddress, initFormPrice };

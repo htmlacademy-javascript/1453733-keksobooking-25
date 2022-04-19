@@ -13,19 +13,19 @@ const showSuccessMessage = () => {
 
   document.addEventListener('click', onHideSuccessMessage);
   document.addEventListener('keydown', onHideSuccessMessageKeyDown);
-}
+};
 
 const onHideSuccessMessageKeyDown = (evt) => {
   if (isEscapeKey(evt)) {
     onHideSuccessMessage();
   }
-}
+};
 
 const onHideSuccessMessage = () => {
   document.querySelector('.success').remove();
   document.removeEventListener('click', onHideSuccessMessage);
   document.removeEventListener('keydown', onHideSuccessMessageKeyDown);
-}
+};
 
 const resetForm = () => {
   resetFormGroup();
@@ -34,7 +34,7 @@ const resetForm = () => {
   pristine.reset();
   getInitialSliderPosition();
   switchOnSubmitBtn();
-}
+};
 
 resetBtn.addEventListener('click', resetForm);
 

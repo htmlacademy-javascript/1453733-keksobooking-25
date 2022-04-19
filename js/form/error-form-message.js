@@ -11,19 +11,19 @@ const showError = () => {
 
   document.body.querySelector('.error').addEventListener('click', onHideErrorMessage);
   document.addEventListener('keydown', onKeyDownHideErrorMessage);
-}
+};
 
 const onHideErrorMessage = () => {
   document.body.querySelector('.error').remove();
   document.removeEventListener('keydown', onKeyDownHideErrorMessage);
   switchOnSubmitBtn();
-}
+};
 
 const onKeyDownHideErrorMessage = (evt) => {
   if (isEscapeKey(evt)) {
     onHideErrorMessage();
   }
-}
+};
 
 const errorMapMessage = () => {
   const formFilter = document.querySelector('.map__filters');
@@ -37,6 +37,6 @@ const errorMapMessage = () => {
   setTimeout(() => {
     main.querySelector('.reject').remove();
   }, MAP_ERROR_TIME_OUT);
-}
+};
 
 export { showError, errorMapMessage };
