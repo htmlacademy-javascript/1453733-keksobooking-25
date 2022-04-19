@@ -5,7 +5,7 @@ import { switchOnSubmitBtn } from './validate-ad-form.js';
 
 const errorMessageTemplate = document.querySelector('#error').content;
 
-function showError() {
+const showError = () => {
   const content = errorMessageTemplate.querySelector('.error').cloneNode(true);
   document.body.appendChild(content);
 
@@ -13,19 +13,19 @@ function showError() {
   document.addEventListener('keydown', onKeyDownHideErrorMessage);
 }
 
-function onHideErrorMessage() {
+const onHideErrorMessage = () => {
   document.body.querySelector('.error').remove();
   document.removeEventListener('keydown', onKeyDownHideErrorMessage);
   switchOnSubmitBtn();
 }
 
-function onKeyDownHideErrorMessage(evt) {
+const onKeyDownHideErrorMessage = (evt) => {
   if (isEscapeKey(evt)) {
     onHideErrorMessage();
   }
 }
 
-function errorMapMessage() {
+const errorMapMessage = () => {
   const formFilter = document.querySelector('.map__filters');
   const main = document.querySelector('main');
   const reject = document.querySelector('#reject').content;

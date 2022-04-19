@@ -102,11 +102,11 @@ const setSubmitForm = (onSucces, onFail) => {
   });
 };
 
-function initFormAddress() {
+const initFormAddress = () => {
   document.querySelector('input#address').value = DEFAULT_ADDRESS;
 }
 
-function initFormPrice() {
+const initFormPrice = () => {
   document.querySelector('input#price').value = DEFAULT_PRICE;
 }
 

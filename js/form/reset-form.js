@@ -6,7 +6,7 @@ import { isEscapeKey } from '../util.js';
 
 const resetBtn = document.querySelector('.ad-form__reset');
 
-function showSuccessMessage() {
+const showSuccessMessage = () => {
   const success = document.querySelector('#success').content;
   const content = success.querySelector('.success').cloneNode(true);
   document.body.appendChild(content);
@@ -15,19 +15,19 @@ function showSuccessMessage() {
   document.addEventListener('keydown', onHideSuccessMessageKeyDown);
 }
 
-function onHideSuccessMessageKeyDown(evt) {
+const onHideSuccessMessageKeyDown = (evt) => {
   if (isEscapeKey(evt)) {
     onHideSuccessMessage();
   }
 }
 
-function onHideSuccessMessage() {
+const onHideSuccessMessage = () => {
   document.querySelector('.success').remove();
   document.removeEventListener('click', onHideSuccessMessage);
   document.removeEventListener('keydown', onHideSuccessMessageKeyDown);
 }
 
-function resetForm() {
+const resetForm = () => {
   resetFormGroup();
   showSuccessMessage();
   returnInitialMap();
