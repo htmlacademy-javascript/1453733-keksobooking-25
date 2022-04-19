@@ -6,8 +6,7 @@ const HUNDRED_ROOMS = 100;
 const NOT_GUESTS = 0;
 const OPEN_SOURCE_MAP = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const MAP_ATTRIBUTE = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-const API_DATA = 'https://25.javascript.pages.academy/keksobooking/data';
-const FORM_URL = 'https://25.javascript.pages.academy/keksobooking';
+const API_URL = 'https://25.javascript.pages.academy/keksobooking';
 const ZOOM_MAP = 13;
 const MAP_ERROR_TIME_OUT = 5000;
 const FILE_TYPES = ['gif', 'jpg', 'jpeg', 'png'];
@@ -15,8 +14,8 @@ const DEBOUCE_TIME_OUT = 500;
 const FORM_PHOTOS_SIZE = 70;
 const HEADER_PREVIEW_IMG = 'img/muffin-grey.svg';
 const DEFAULT = 'any';
-const DEFAULT_ADDRESS = '35.681729, 139.753927';
-const DEFAULT_PRICE = 5000;
+const DEFAULT_ADDRESS = '35.68173, 139.75393';
+const DEFAULT_PRICE = 1000;
 
 const housePriceTypes = {
   bungalow: 0,
@@ -53,7 +52,7 @@ const priceList = {
 const getInitialCoords = () => initialCoords;
 
 export {
-  TITLE_MIN_LENGTH, TITLE_MAX_LENGTH, MAX_PRICE, HUNDRED_ROOMS, NOT_GUESTS, OPEN_SOURCE_MAP, API_DATA, FORM_URL, ZOOM_MAP, DEBOUCE_TIME_OUT,
+  TITLE_MIN_LENGTH, TITLE_MAX_LENGTH, MAX_PRICE, HUNDRED_ROOMS, NOT_GUESTS, OPEN_SOURCE_MAP, API_URL, ZOOM_MAP, DEBOUCE_TIME_OUT,
   MAP_ERROR_TIME_OUT, MAP_ATTRIBUTE, OFFER_LENGTH, housePriceTypes, mainIcon, similarIcon, FILE_TYPES, DEFAULT, DEFAULT_ADDRESS, DEFAULT_PRICE, priceList, FORM_PHOTOS_SIZE,
   HEADER_PREVIEW_IMG, getInitialCoords
 };
